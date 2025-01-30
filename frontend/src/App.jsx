@@ -8,6 +8,7 @@ import Doctors from "./pages/Doctors";
 import MyAppointments from "./pages/MyAppointments";
 import MyProfile from "./pages/MyProfile";
 import Appointment from "./pages/Appointment";
+import Footer from "./components/Footer";
 
 const App = () => {
   return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>
+      <Footer />
     </div>
   );
 };
