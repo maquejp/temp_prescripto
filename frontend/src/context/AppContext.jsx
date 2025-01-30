@@ -1,5 +1,5 @@
 import { createContext } from "react";
-import { doctors } from "../assets/assets";
+import { doctors, specialityData } from "../assets/assets";
 import PropTypes from "prop-types";
 
 export const AppContext = createContext();
@@ -7,6 +7,7 @@ export const AppContext = createContext();
 const AppContextProvider = (props) => {
   const value = {
     doctors,
+    specialityData,
   };
 
   return (
