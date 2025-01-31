@@ -50,16 +50,16 @@ const About = () => {
             Why <span className="text-gray-700 font-medium">CHOOSE US</span>
           </p>
         </div>
-        <div className="flex flex-col md:flex-row gap-12 my-10">
-          <div className="border-2 border-gray-200 p-4 rounded-lg">
+        <div className="flex flex-col md:flex-row mb-20">
+          <div className="border-2 border-gray-200 px-10 md:px-16 py-8 flex flex-col gap-5 text-[15px] hover:text-white transition-all duration-300 hover:bg-blue-500">
             <b className="text-gray-800">Efficiency:</b>
             <p>Streamlined</p>
           </div>
-          <div className="border-2 border-gray-200 p-4 rounded-lg">
+          <div className="border-2 border-gray-200 px-10 md:px-16 py-8 flex flex-col gap-5 text-[15px] hover:text-white transition-all duration-300 hover:bg-blue-500">
             <b className="text-gray-800">Convenience:</b>
             <p>Acces to a network</p>
           </div>
-          <div className="border-2 border-gray-200 p-4 rounded-lg">
+          <div className="border-2 border-gray-200 px-10 md:px-16 py-8 flex flex-col gap-5 text-[15px] hover:text-white transition-all duration-300 hover:bg-blue-500">
             <b className="text-gray-800">Personalisation:</b>
             <p>Tailored</p>
           </div>
