@@ -26,11 +26,21 @@ const Doctors = () => {
       <p className="text-gray-600">Browse through the doctors specialist.</p>
       <div className="flex flex-col sm:flex-row items-start gap-5 mt-10">
         <div className="flex flex-col gap-4 text-sm text-gray-600">
+          <p
+            className={`w-[94vw] sm:w-auto cursor-pointer pl-3 py-1.5 pr-16 border border-gray-400 rounded transition-all duration-300 hover:bg-gray-100 ${
+              specialityParam === undefined ? "bg-green-200" : ""
+            }`}
+            onClick={() => navigate(`/doctors/`)}
+          >
+            All Specialities
+          </p>
           {specialityData.map((speciality, index) => {
             return (
               <p
                 className={`w-[94vw] sm:w-auto cursor-pointer pl-3 py-1.5 pr-16 border border-gray-400 rounded transition-all duration-300 hover:bg-gray-100 ${
-                  specialityParam === speciality.speciality ? "bg-gray-100" : ""
+                  specialityParam === speciality.speciality
+                    ? "bg-green-200"
+                    : ""
                 }`}
                 key={index}
                 onClick={() => navigate(`/doctors/${speciality.speciality}`)}
