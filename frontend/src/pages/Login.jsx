@@ -24,16 +24,18 @@ const Login = () => {
           Please {state === "Sign Up" ? "sign up" : "login"} to book an
           appointment
         </p>
-        <div className="w-full">
-          <p>Full name</p>
-          <input
-            className="border border-zinc-300 rounded w-full p-2 mt-1"
-            type="text"
-            onChange={(e) => setName(e.target.value)}
-            value={name}
-            required
-          />
-        </div>
+        {state === "Sign Up" && (
+          <div className="w-full">
+            <p>Full name</p>
+            <input
+              className="border border-zinc-300 rounded w-full p-2 mt-1"
+              type="text"
+              onChange={(e) => setName(e.target.value)}
+              value={name}
+              required
+            />
+          </div>
+        )}
         <div className="w-full">
           <p>Email</p>
           <input
@@ -57,9 +59,27 @@ const Login = () => {
         <button className="w-full bg-app-primary text-white py-2 rounded">
           {state === "Sign Up" ? "Create account" : "Login"}
         </button>
-        <p className="w-full text-center">
-          Already have an account? Login here
-        </p>
+        {state === "Sign Up" ? (
+          <p className="w-full text-center">
+            Already have an account?
+            <span
+              className="cursor-pointer text-app-primary underline"
+              onClick={() => setState("Login")}
+            >
+              &nbsp;Login here
+            </span>
+          </p>
+        ) : (
+          <p className="w-full text-center">
+            Create a new account?
+            <span
+              className="cursor-pointer text-app-primary underline"
+              onClick={() => setState("Sign Up")}
+            >
+              &nbsp;Click here
+            </span>
+          </p>
+        )}
       </div>
     </form>
   );
