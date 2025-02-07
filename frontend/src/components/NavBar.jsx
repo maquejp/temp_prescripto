@@ -78,6 +78,46 @@ const NavBar = () => {
             Create account
           </button>
         )}
+        <img
+          src={assets.menu_icon}
+          alt=""
+          className="w-6 md:hidden"
+          onClick={() => setShowMenu(true)}
+        />
+        {/* MOBILE NAV */}
+        <div
+          className={`md:hidden right-0 top-0 bottom-0 z-20 overflow-hidden bg-white transition-all duration-300 ${
+            showMenu ? "fixed w-full" : "h-0 w-0"
+          }`}
+        >
+          <div className="flex items-center justify-between px-5 py-6">
+            <img src={assets.logo} alt="" className="w-36" />
+            <img
+              src={assets.cross_icon}
+              alt=""
+              onClick={() => setShowMenu(false)}
+              className="w-6 cursor-pointer"
+            />
+          </div>
+          <ul className="flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium">
+            <NavLink onClick={() => setShowMenu(false)} to="/">
+              <li className="py-1">Home</li>
+              <hr className="border-none outline-none h-0.5 bg-app-primary w-3/5 m-auto hidden" />
+            </NavLink>
+            <NavLink onClick={() => setShowMenu(false)} to="/doctors">
+              <li className="py-1">Doctors</li>
+              <hr className="border-none outline-none h-0.5 bg-app-primary w-3/5 m-auto hidden" />
+            </NavLink>
+            <NavLink onClick={() => setShowMenu(false)} to="/about">
+              <li className="py-1">About</li>
+              <hr className="border-none outline-none h-0.5 bg-app-primary w-3/5 m-auto hidden" />
+            </NavLink>
+            <NavLink onClick={() => setShowMenu(false)} to="/contact">
+              <li className="py-1">Contact</li>
+              <hr className="border-none outline-none h-0.5 bg-app-primary w-3/5 m-auto hidden" />
+            </NavLink>
+          </ul>
+        </div>
       </div>
     </div>
   );
