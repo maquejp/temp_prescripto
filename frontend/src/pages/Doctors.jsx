@@ -7,6 +7,7 @@ const Doctors = () => {
   const { doctors, specialityData } = useContext(AppContext);
   const { specialityParam } = useParams();
   const [filterDoc, setFilterDoc] = useState([]);
+  const [showFilter, setShowFilter] = useState(false);
   const navigate = useNavigate();
 
   const applyFilter = () => {
@@ -25,7 +26,19 @@ const Doctors = () => {
     <div className="">
       <p className="text-gray-600">Browse through the doctors specialist.</p>
       <div className="flex flex-col sm:flex-row items-start gap-5 mt-10">
-        <div className="flex flex-col gap-4 text-sm text-gray-600">
+        <button
+          onClick={() => setShowFilter((prev) => !prev)}
+          className={`py-1 px-3 border rounded text-sm transition-all duration-300 sm:hidden ${
+            showFilter ? "bg-app-primary text-white" : ""
+          }`}
+        >
+          Filters
+        </button>
+        <div
+          className={`flex-col gap-4 text-sm text-gray-600 ${
+            showFilter ? "flex" : "hidden sm:flex"
+          }`}
+        >
           <p
             className={`w-[94vw] sm:w-auto cursor-pointer pl-3 py-1.5 pr-16 border border-gray-400 rounded transition-all duration-300 hover:bg-gray-100 ${
               specialityParam === undefined ? "bg-green-200" : ""
