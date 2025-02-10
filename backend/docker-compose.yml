@@ -1,0 +1,22 @@
+services:
+  local-db-mongodb:
+    image: mongodb/mongodb-community-server:latest
+    container_name: local-db-mongodb
+    restart: unless-stopped
+    environment:
+      MONGODB_INITDB_ROOT_USERNAME: mongouser
+      MONGODB_INITDB_ROOT_PASSWORD: Sc0tl4nd2024
+    volumes:
+      - local-db-mongodb:/data/db
+    ports:
+      - "27017:27017"
+    networks:
+      local-network-bridge:
+        ipv4_address: 192.168.0.14
+
+volumes:
+  local-db-mongodb:
+
+networks:
+  local-network-bridge:
+    external: true
