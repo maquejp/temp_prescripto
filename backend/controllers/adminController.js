@@ -20,18 +20,6 @@ const addDoctor = async (req, res) => {
     } = req.body;
     const imageFile = req.file
 
-    console.log({
-      name,
-      email,
-      password,
-      speciality,
-      degree,
-      experience,
-      about,
-      fees,
-      address,
-    }, imageFile);
-
     if (!name || !email || !password || !speciality || !degree || !experience || !about || !fees || !address) {
       return res.status(400).json({ success: false, message: "all fields are required" });
     }
@@ -70,13 +58,12 @@ const addDoctor = async (req, res) => {
       available: true,
     };
 
-    console.log(doc);
-
     try {
       const newDoc = new doctorModel(doc);
       await newDoc.save();
       return res.status(201).json({ success: true, message: "Doc added" });
     } catch (error) {
+      console.log(doc);
       console.log(error);
       // Handle validation errors (like missing required fields)
       if (error.name === "ValidationError") {
