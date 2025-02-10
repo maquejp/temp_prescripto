@@ -4,57 +4,57 @@ const doctorSchema = new mongoose.Schema(
   {
     name: {
       type: String,
-      required: true,
+      required: true
     },
     email: {
       type: String,
       required: true,
-      unique: true,
+      unique: true
     },
     password: {
       type: String,
-      required: true,
+      required: true
     },
     image: {
       type: String,
-      required: true,
+      required: true
     },
     speciality: {
       type: String,
-      required: true,
+      required: true
     },
     degree: {
       type: String,
-      required: true,
+      required: true
     },
     experience: {
       type: String,
-      required: true,
+      required: true
     },
     about: {
       type: String,
-      required: true,
+      required: true
     },
     available: {
       type: Boolean,
-      required: true,
+      required: true
     },
     fees: {
       type: Number,
-      required: true,
+      required: true
     },
     address: {
-      typer: Object,
-      required: true,
+      type: Object,
+      required: true
     },
     creation_date: {
       type: Number,
-      required: true,
+      required: true
     },
     slots_booked: {
       type: Object,
-      default: {},
-    },
+      default: {}
+    }
   },
   { minimize: false }
 );
